@@ -1,0 +1,43 @@
+﻿<Window x:Class="PraiseAnimation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PraiseAnimation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="220" Width="100">
+    <Window.Resources>
+        <PathGeometry 
+            x:Key="praise_path1"
+            Figures="M100,200 C100,200 -20,120 75,60"/>
+        <PathGeometry
+            x:Key="praise_path2"
+            Figures="M100,200 C100,200 100,160 60,130 60,130 0,100 50,0"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="paint" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="200" Width="100">
+        </Canvas>
+
+        <Button 
+            Grid.Row="1"
+            HorizontalAlignment="Right"
+            FontFamily="Resources/#iconfont"
+            Content="&#xe65e;"
+            Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Image Source="./Resources/dianzan_2.png"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
